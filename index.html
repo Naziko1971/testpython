@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="kk" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python және Алгоритмдеу Негіздері - Онлайн Тест</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        pre, code {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(100,116,139,0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(100,116,139,0.5);
+        }
+
+        /* Highlighting syntax simulation */
+        .py-kw { color: #f43f5e; font-weight: 600; }
+        .py-fn { color: #3b82f6; font-weight: 600; }
+        .py-str { color: #10b981; }
+        .py-num { color: #f59e0b; }
+
+        /* Print styling for PDF export certificate */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .certificate-card {
+                box-shadow: none !important;
+                border: 2px solid #1e3a8a !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200 flex flex-col">
+
+    <!-- Top Header -->
+    <header class="no-print sticky top-0 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur border-b border-slate-200 dark:border-slate-700 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                    <i class="fa-solid fa-code text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold bg-gradient-to-r from-brand-700 to-indigo-600 dark:from-brand-400 dark:to-indigo-400 bg-clip-text text-transparent leading-tight">
+                        Python & Алгоритмдеу
+                    </h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">Онлайн білім тестілеу платформасы</p>
+                </div>
+            </div>
+
+            <!-- Header Controls -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="hidden sm:flex items-center px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs font-medium border border-amber-200 dark:border-amber-800">
+                    <i class="fa-solid fa-star mr-1.5 text-amber-500"></i>
+                    <span> Әр сұрақ: <b>2 балл</b> (Жалпы: 100 балл)</span>
+                </div>
+
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors" title="Тақырыпты ауыстыру">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400 text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- SCREEN 1: WELCOME & REGISTRATION -->
+        <section id="screenWelcome" class="max-w-2xl mx-auto my-8">
+            <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 p-6 sm:p-10 relative overflow-hidden">
+                <div class="absolute -right-12 -top-12 w-40 h-40 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -left-12 -bottom-12 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="text-center mb-8">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-100 dark:bg-brand-900/50 text-brand-700 dark:text-brand-300 mb-3">
+                        <i class="fa-solid fa-graduation-cap mr-1.5"></i> Қорытынды бақылау
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        Тестке қош келдіңіз!
+                    </h2>
+                    <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        Python бағдарламалау тілі және алгоритмдеу негіздері бойынша біліміңізді тексеріңіз.
+                    </p>
+                </div>
+
+                <!-- Test Specification Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                    <div class="p-3.5 bg-slate-50 dark:bg-slate-700/50 rounded-2xl text-center border border-slate-100 dark:border-slate-700">
+                        <i class="fa-solid fa-list-check text-brand-500 text-xl mb-1"></i>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Сұрақ саны</div>
+                        <div class="text-lg font-bold text-slate-800 dark:text-white">50 сұрақ</div>
+                    </div>
+                    <div class="p-3.5 bg-slate-50 dark:bg-slate-700/50 rounded-2xl text-center border border-slate-100 dark:border-slate-700">
+                        <i class="fa-solid fa-award text-amber-500 text-xl mb-1"></i>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Макс. балл</div>
+                        <div class="text-lg font-bold text-slate-800 dark:text-white">100 балл</div>
+                    </div>
+                    <div class="p-3.5 bg-slate-50 dark:bg-slate-700/50 rounded-2xl text-center border border-slate-100 dark:border-slate-700">
+                        <i class="fa-solid fa-bullseye text-emerald-500 text-xl mb-1"></i>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Әр сұраққа</div>
+                        <div class="text-lg font-bold text-slate-800 dark:text-white">2 балл</div>
+                    </div>
+                    <div class="p-3.5 bg-slate-50 dark:bg-slate-700/50 rounded-2xl text-center border border-slate-100 dark:border-slate-700">
+                        <i class="fa-solid fa-clock text-indigo-500 text-xl mb-1"></i>
+                        <div class="text-xs text-slate-500 dark:text-slate-400">Уақыт</div>
+                        <div class="text-lg font-bold text-slate-800 dark:text-white">50 минут</div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="startForm" onsubmit="handleStartTest(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">
+                            Студенттің Аты-жөні <span class="text-rose-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <i class="fa-solid fa-user absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="text" id="studentName" required placeholder="Мысалы: Асан Әлиев" 
+                                class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:bg-white dark:focus:bg-slate-800 outline-none transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">
+                                Топ / Сынып <span class="text-rose-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <i class="fa-solid fa-users absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                                <input type="text" id="studentGroup" required placeholder="Мысалы: CS-201" 
+                                    class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:bg-white dark:focus:bg-slate-800 outline-none transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">
+                                Таймер шегі
+                            </label>
+                            <div class="relative">
+                                <i class="fa-solid fa-hourglass-half absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                                <select id="testTimerSelect" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:bg-white dark:focus:bg-slate-800 outline-none transition appearance-none">
+                                    <option value="50" selected>50 минут</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Mode Selection -->
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5">
+                            Тестілеу режимі
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="p-3 border rounded-xl flex items-center space-x-3 cursor-pointer bg-slate-50 dark:bg-slate-700/40 hover:bg-slate-100 dark:hover:bg-slate-700 border-slate-200 dark:border-slate-600">
+                                <input type="radio" name="testMode" value="exam" checked class="text-brand-600 focus:ring-brand-500">
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white">📝 Экзамен режимі</div>
+                                    <div class="text-[11px] text-slate-500 dark:text-slate-400">Нәтиже соңында көрсетіледі</div>
+                                </div>
+                            </label>
+                            <label class="p-3 border rounded-xl flex items-center space-x-3 cursor-pointer bg-slate-50 dark:bg-slate-700/40 hover:bg-slate-100 dark:hover:bg-slate-700 border-slate-200 dark:border-slate-600">
+                                <input type="radio" name="testMode" value="practice" class="text-brand-600 focus:ring-brand-500">
+                                <div>
+                                    <div class="text-xs font-bold text-slate-900 dark:text-white">💡 Жаттығу режимі</div>
+                                    <div class="text-[11px] text-slate-500 dark:text-slate-400">Дұрыс/Қатесі бірден шығады</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Additional Options -->
+                    <div class="pt-2">
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="shuffleAnswers" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-slate-600 peer-checked:bg-brand-600 relative"></div>
+                            <span class="ml-3 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">Жауап нұсқаларын араластыру</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full mt-4 py-4 px-6 bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white font-bold text-base rounded-2xl shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 transition duration-200 flex items-center justify-center space-x-2">
+                        <span>Тестті Бастау</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SCREEN 2: ACTIVE TEST INTERFACE -->
+        <section id="screenTest" class="hidden space-y-6">
+            
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-3 w-full sm:w-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">
+                        <span id="displayUserInitials">СА</span>
+                    </div>
+                    <div>
+                        <div id="displayUserName" class="font-bold text-slate-900 dark:text-white text-sm">Студент Аты</div>
+                        <div id="displayUserGroup" class="text-xs text-slate-500 dark:text-slate-400">Топ: CS-201</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-end">
+                    <div class="px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold">
+                        Сұрақ: <span id="currentQuestionNum" class="text-brand-600 dark:text-brand-400 font-bold">1</span> / 50
+                    </div>
+
+                    <div id="timerContainer" class="px-3.5 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold flex items-center space-x-2 border border-indigo-100 dark:border-indigo-900">
+                        <i class="fa-solid fa-clock animate-pulse"></i>
+                        <span id="timerDisplay">50:00</span>
+                    </div>
+
+                    <button onclick="toggleGridModal()" class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs font-medium flex items-center space-x-1 transition">
+                        <i class="fa-solid fa-th"></i>
+                        <span class="hidden md:inline">Сұрақтар торшасы</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Global Progress Bar -->
+            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                <div id="progressBar" class="bg-gradient-to-r from-brand-500 to-indigo-600 h-full w-0 transition-all duration-300"></div>
+            </div>
+
+            <!-- Main Test Area -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-8 bg-white dark:bg-slate-800 rounded-3xl shadow-md border border-slate-100 dark:border-slate-700 p-5 sm:p-8 space-y-6">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex items-center space-x-3">
+                            <span class="flex-shrink-0 px-3 py-1 rounded-xl bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 font-bold text-sm">
+                                № <span id="qIndexBadge">1</span>
+                            </span>
+                            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">
+                                Ұпай: <b>2 балл</b>
+                            </span>
+                        </div>
+
+                        <button id="flagBtn" onclick="toggleFlagCurrentQuestion()" class="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 hover:border-amber-400 text-xs font-medium transition flex items-center space-x-1.5">
+                            <i id="flagIcon" class="fa-regular fa-bookmark"></i>
+                            <span id="flagText">Белгілеу</span>
+                        </button>
+                    </div>
+
+                    <div id="questionText" class="text-base sm:text-lg font-semibold text-slate-900 dark:text-white leading-relaxed">
+                        Сұрақ мәтіні осы жерде шығады...
+                    </div>
+
+                    <div id="codeBlockContainer" class="hidden">
+                        <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 text-slate-100 p-4 shadow-inner">
+                            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-xs text-slate-400 font-mono">
+                                <span><i class="fa-brands fa-python text-amber-400 mr-1.5"></i>python_code.py</span>
+                                <span>Python 3.x</span>
+                            </div>
+                            <pre><code id="codeBlock" class="text-sm font-mono leading-relaxed overflow-x-auto block"></code></pre>
+                        </div>
+                    </div>
+
+                    <div id="optionsContainer" class="space-y-3 pt-2"></div>
+
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between gap-3">
+                        <button id="prevBtn" onclick="navigateQuestion(-1)" class="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition disabled:opacity-40 disabled:pointer-events-none flex items-center space-x-2">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            <span>Алдыңғы</span>
+                        </button>
+
+                        <div class="flex items-center space-x-2">
+                            <button id="nextBtn" onclick="navigateQuestion(1)" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition flex items-center space-x-2 shadow-md shadow-brand-500/20">
+                                <span>Келесі</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                            <button id="submitTestBtn" onclick="showSubmitModal()" class="hidden px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition flex items-center space-x-2 shadow-md shadow-emerald-500/20">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>Аяқтау</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block lg:col-span-4 bg-white dark:bg-slate-800 rounded-3xl shadow-md border border-slate-100 dark:border-slate-700 p-5 space-y-4 sticky top-24">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-700">
+                        <h3 class="font-bold text-slate-800 dark:text-white text-sm">Сұрақтар тізімі</h3>
+                        <span id="answeredRatioBadge" class="text-xs font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-900/40 px-2.5 py-1 rounded-lg">
+                            0/50 орындалды
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-500 dark:text-slate-400 pt-1">
+                        <div class="flex items-center space-x-1.5">
+                            <span class="w-3 h-3 rounded-md bg-emerald-500"></span>
+                            <span>Жауап берілген</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="w-3 h-3 rounded-md bg-slate-200 dark:bg-slate-700 border border-slate-300 dark:border-slate-600"></span>
+                            <span>Орындалмаған</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="w-3 h-3 rounded-md bg-amber-400"></span>
+                            <span>Белгіленген</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5">
+                            <span class="w-3 h-3 rounded-md ring-2 ring-brand-500 bg-brand-50"></span>
+                            <span>Ағымдағы</span>
+                        </div>
+                    </div>
+
+                    <div id="desktopQuestionGrid" class="grid grid-cols-5 gap-2 max-h-[380px] overflow-y-auto p-1"></div>
+
+                    <button onclick="showSubmitModal()" class="w-full mt-2 py-3 px-4 bg-slate-900 hover:bg-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 text-white text-xs font-bold rounded-xl transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Тестті Ерте Аяқтау</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREEN 3: TEST RESULTS -->
+        <section id="screenResult" class="hidden space-y-8 max-w-4xl mx-auto my-4">
+            <div class="certificate-card bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-700 p-6 sm:p-10 relative overflow-hidden">
+                <div class="no-print absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="text-center pb-6 border-b border-slate-100 dark:border-slate-700">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-600 text-white text-2xl font-bold mb-3 shadow-lg shadow-brand-500/30">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                        Тестілеу Нәтижесі Журналы
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        Python & Алгоритмдеу Негіздері
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                    <div class="bg-slate-50 dark:bg-slate-700/40 rounded-2xl p-5 border border-slate-100 dark:border-slate-700 space-y-3">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Студент деректері</h4>
+                        <div class="space-y-1.5">
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Аты-жөні: <b id="resStudentName" class="text-slate-900 dark:text-white">--</b></div>
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Тобы: <b id="resStudentGroup" class="text-slate-900 dark:text-white">--</b></div>
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Тапсырылған уақыты: <b id="resDateTime" class="text-slate-900 dark:text-white">--</b></div>
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Шығындалған уақыт: <b id="resTimeSpent" class="text-slate-900 dark:text-white">--</b></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-slate-900 to-brand-950 text-white rounded-2xl p-5 flex flex-col justify-between shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Жалпы Ұпай</span>
+                            <span id="gradeBadge" class="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-500 text-white">
+                                Өте жақсы
+                            </span>
+                        </div>
+                        <div class="my-3 text-center">
+                            <div class="text-4xl sm:text-5xl font-black tracking-tight text-white">
+                                <span id="resTotalPoints">0</span> <span class="text-xl font-normal text-slate-400">/ 100</span>
+                            </div>
+                            <div class="text-xs text-brand-200 mt-1">
+                                Көрсеткіш: <span id="resPercentage" class="font-bold">0%</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-center text-xs border-t border-slate-800 pt-2 text-slate-300">
+                            <div>Дұрысы: <b id="resCorrectCount" class="text-emerald-400">0</b> / 50</div>
+                            <div>Қатесі: <b id="resIncorrectCount" class="text-rose-400">0</b> / 50</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-print flex flex-wrap items-center justify-center gap-3 pt-2">
+                    <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm transition flex items-center space-x-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Нәтижені басып шығару (PDF)</span>
+                    </button>
+
+                    <button onclick="copyResultsSummary()" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-slate-700 dark:text-slate-200 font-semibold text-xs sm:text-sm transition flex items-center space-x-2">
+                        <i class="fa-solid fa-copy"></i>
+                        <span>Мәтінді көшіру</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modals and Toasts -->
+    <div id="gridModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-700">
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">Сұрақтар торшасы (1-50)</h3>
+                <button onclick="toggleGridModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 hover:text-slate-800 flex items-center justify-center">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="mobileQuestionGrid" class="grid grid-cols-5 gap-2.5 max-h-[60vh] overflow-y-auto p-1"></div>
+
+            <button onclick="toggleGridModal()" class="w-full py-3 bg-brand-600 text-white font-bold rounded-xl">
+                Жабу
+            </button>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl border border-slate-200 dark:border-slate-700">
+            <div class="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-500 flex items-center justify-center text-2xl mx-auto">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Тестті аяқтайсыз ба?</h3>
+                <p id="unansweredWarningText" class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Сізде жауап берілмеген сұрақтар бар!
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <button onclick="closeSubmitModal()" class="py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 font-semibold text-slate-700 dark:text-slate-300 text-xs">
+                    Қайта оралу
+                </button>
+                <button onclick="finalizeTest()" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-500/20">
+                    Иә, тапсыру
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center space-x-2 text-xs font-medium">
+        <i id="toastIcon" class="fa-solid fa-circle-info text-brand-400"></i>
+        <span id="toastMsg">Хабарлама</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const rawQuestionsData = [
+            {
+                id: 1,
+                question: "Цельсий градусын Фаренгейтке түрлендіретін F = (9/5)*C + 32 формуласы бойынша жазылған төмендегі кодтың нәтижесі неге тең болады?",
+                code: "C = 25\nF = (9 / 5) * C + 32\nprint(F)",
+                options: ["77.0", "75.0", "80.0", "68.0"],
+                answer: "77.0"
+            },
+            {
+                id: 2,
+                question: "Тікбұрышты үшбұрыштың катеттері a = 3 және b = 4 берілген. Гипотенузаны табатын кодтың нәтижесі қандай болады?",
+                code: "import math\na, b = 3, 4\nc = math.sqrt(a**2 + b**2)\nprint(c)",
+                options: ["5.0", "7.0", "25.0", "12.0"],
+                answer: "5.0"
+            },
+            {
+                id: 3,
+                question: "Квадрат теңдеудің дискриминантын (D = b^2 - 4ac) есептейтін төмендегі код орындалғанда D айнымалысының мәні неге тең болады?",
+                code: "a, b, c = 1, -5, 6\nD = b**2 - 4 * a * c\nprint(D)",
+                options: ["1", "25", "0", "4"],
+                answer: "1"
+            },
+            {
+                id: 4,
+                question: "Жолдың палиндром екендігін тексеретін мына кодтың орындалу нәтижесі не болады?",
+                code: "s = 'radar'\nis_pal = (s == s[::-1])\nprint(is_pal)",
+                options: ["True", "False", "radar", "SyntaxError"],
+                answer: "True"
+            },
+            {
+                id: 5,
+                question: "Санның факториалын есептейтін төмендегі for циклі орындалғаннан кейін f айнымалысының мәні неге тең болады?",
+                code: "f = 1\nfor i in range(1, 5):\n    f *= i\nprint(f)",
+                options: ["24", "120", "10", "5"],
+                answer: "24"
+            },
+            {
+                id: 6,
+                question: "Фибоначчи тізбегінің мүшелерін генерациялайтын мына алгоритм орындалған соң a айнымалысының соңғы мәні нешеге тең болады?",
+                code: "a, b = 0, 1\nfor _ in range(5):\n    a, b = b, a + b\nprint(a)",
+                options: ["5", "3", "8", "2"],
+                answer: "5"
+            },
+            {
+                id: 7,
+                question: "Шеңбердің ауданын (S = pi * r^2) есептейтін бағдарламаның бос орнын қай өрнекпен толықтырғанда бағдарлама дұрыс жұмыс істейді?",
+                code: "import math\nr = 5\nS = ____\nprint(S)",
+                options: ["math.pi * r ** 2", "math.pi * r * 2", "pi * r ** 2", "math.pow(r) * math.pi"],
+                answer: "math.pi * r ** 2"
+            },
+            {
+                id: 8,
+                question: "Төменде берілген join() әдісі тізім элементтерін біріктіргенде экранға қандай нәтиже шығады?",
+                code: "words = ['Python', 'кіріспе']\nres = '-'.join(words)\nprint(res)",
+                options: ["Python-кіріспе", "Python кіріспе", "Python-кіріспе-", "-Python-кіріспе"],
+                answer: "Python-кіріспе"
+            },
+            {
+                id: 9,
+                question: "Берілген жылдың кібісе (високосный) жыл екенін тексеретін логикалық өрнектің нәтижесі қандай болады?",
+                code: "year = 2024\nis_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)\nprint(is_leap)",
+                options: ["True", "False", "None", "Error"],
+                answer: "True"
+            },
+            {
+                id: 10,
+                question: "Енгізілген бүтін санның цифрларының қосындысын табатын мына while циклі орындалған соң s айнымалысы неге тең болады?",
+                code: "n = 123\ns = 0\nwhile n > 0:\n    s += n % 10\n    n //= 10\nprint(s)",
+                options: ["6", "123", "3", "5"],
+                answer: "6"
+            },
+            {
+                id: 11,
+                question: "Блок-схемада алгоритмнің тармақталуын және шартты тексеру әрекетін бейнелеу үшін қай геометриялық фигура қолданылады?",
+                code: null,
+                options: ["Ромб", "Тіктөртбұрыш", "Овал", "Параллелограмм"],
+                answer: "Ромб"
+            },
+            {
+                id: 12,
+                question: "Алгоритмнің әрбір қадамы нақты, түсінікті және орындаушыға екіұдай түсінік тудырмайтындай жазылуын талап ететін қасиеті қайсысы?",
+                code: null,
+                options: ["Анықтылық (детерминизм)", "Дискреттілік", "Нәтижелілік", "Жалпылық"],
+                answer: "Анықтылық (детерминизм)"
+            },
+            {
+                id: 13,
+                question: "Python программалау тілін 1991 жылы қай ғалым жасап шығарды?",
+                code: null,
+                options: ["Гвидо ван Россум", "Деннис Ритчи", "Бьерн Страуструп", "Джеймс Гослинг"],
+                answer: "Гвидо ван Россум"
+            },
+            {
+                id: 14,
+                question: "Python IDLE ортасының командаларды жеке-жеке енгізіп, нәтижесін бірден көруге мүмкіндік беретін режимі қалай аталады?",
+                code: null,
+                options: ["Интерактивті режим (Shell)", "Скрипттік режим", "Редактор режимі", "Консоль режимі"],
+                answer: "Интерактивті режим (Shell)"
+            },
+            {
+                id: 15,
+                question: "Python тілінде -17 // 5 және -17 % 5 амалдары орындалғанда сәйкесінше қандай нәтиже алынады?",
+                code: null,
+                options: ["-4 және 3", "-3 және -2", "-4 және -2", "-3 және 3"],
+                answer: "-4 және 3"
+            },
+            {
+                id: 16,
+                question: "Арифметикалық амалдардың орындалу ретін ескере отырып, 3 + 4 * 2 ** 3 өрнегінің нәтижесін анықтаңыз:",
+                code: null,
+                options: ["35", "56", "38", "22"],
+                answer: "35"
+            },
+            {
+                id: 17,
+                question: "math.ceil(-3.2) және math.floor(-3.2) функцияларының орындалу нәтижелері қандай болады?",
+                code: null,
+                options: ["-3 және -4", "-4 және -3", "-3 және -3", "-4 және -4"],
+                answer: "-3 және -4"
+            },
+            {
+                id: 18,
+                question: "Радиан түріндегі pi/4 бұрышын градусқа айналдыратын мына кодтың орындалу нәтижесі неге тең?",
+                code: "import math\nprint(math.degrees(math.pi / 4))",
+                options: ["45.0", "90.0", "180.0", "36.0"],
+                answer: "45.0"
+            },
+            {
+                id: 19,
+                question: "Координаталық жазықтықтағы (0,0) және (6,8) нүктелерінің арақашықтығын d = sqrt((x2-x1)^2 + (y2-y1)^2) формуласымен есептейтін кодтың нәтижесі неге тең болады?",
+                code: null,
+                options: ["10.0", "14.0", "100.0", "7.0"],
+                answer: "10.0"
+            },
+            {
+                id: 20,
+                question: "Мына тернарлық шартты өрнек орындалғанда res айнымалысына қандай мән меншіктеледі?",
+                code: "x = 15\nres = 'Жұп' if x % 2 == 0 else 'Тақ'\nprint(res)",
+                options: ["Тақ", "Жұп", "True", "False"],
+                answer: "Тақ"
+            },
+            {
+                id: 21,
+                question: "Шартты қысқаша бағалау (short-circuit evaluation) принципіне сәйкес төмендегі код орындалғанда экранға не шығады?",
+                code: "a = 0\nres = a != 0 and (10 / a > 1)\nprint(res)",
+                options: ["False", "ZeroDivisionError", "True", "None"],
+                answer: "False"
+            },
+            {
+                id: 22,
+                question: "Төменде берілген бағалау жүйесінің коды орындалғанда g айнымалысы қандай мән қабылдайды?",
+                code: "score = 82\nif score >= 90:\n    g = 'A'\nelif score >= 75:\n    g = 'B'\nelse:\n    g = 'C'\nprint(g)",
+                options: ["B", "A", "C", "Error"],
+                answer: "B"
+            },
+            {
+                id: 23,
+                question: "Теріс қадаммен берілген range(10, 2, -3) функциясы қай сандар тізбегін генерациялайды?",
+                code: null,
+                options: ["[10, 7, 4]", "[10, 7, 4, 1]", "[10, 8, 6, 4, 2]", "[7, 4, 1]"],
+                answer: "[10, 7, 4]"
+            },
+            {
+                id: 24,
+                question: "Мына while-else құрылымы орындалғаннан кейін i айнымалысының мәні неге тең болады?",
+                code: "i = 0\nwhile i < 3:\n    i += 1\nelse:\n    i += 5\nprint(i)",
+                options: ["8", "3", "5", "0"],
+                answer: "8"
+            },
+            {
+                id: 25,
+                question: "Төменде берілген ішкі ораласқан for циклдері орындалғанда s айнымалысының соңғы мәні неге тең болады?",
+                code: "s = 0\nfor i in range(1, 4):\n    for j in range(1, i + 1):\n        s += 1\nprint(s)",
+                options: ["6", "9", "3", "10"],
+                answer: "6"
+            },
+            {
+                id: 26,
+                question: "continue және break операторлары бар мына цикл орындалғаннан кейін s айнымалысы неге тең болады?",
+                code: "s = 0\nfor i in range(5):\n    if i % 2 == 0:\n        continue\n    if i == 4:\n        break\n    s += i\nprint(s)",
+                options: ["4", "9", "0", "10"],
+                answer: "4"
+            },
+            {
+                id: 27,
+                question: "Төменде берілген срез өрнегі орындалғанда экранға не басып шығарылады?",
+                code: "text = 'PROGRAMMING'\nprint(text[3:8:2])",
+                options: ["GAM", "GRA", "GMN", "RMM"],
+                answer: "GAM"
+            },
+            {
+                id: 28,
+                question: "Теріс қадаммен берілген мына срездің орындалу нәтижесін табыңыз:",
+                code: "s = 'PYTHON'\nprint(s[4:1:-1])",
+                options: ["OHT", "OHTY", "ONH", "OH"],
+                answer: "OHT"
+            },
+            {
+                id: 29,
+                question: "count() әдісінің қиылыспайтын ішкі жолдарды санау ерекшелігін ескере отырып нәтижесін табыңыз:",
+                code: "s = 'banana'\nprint(s.count('an'))",
+                options: ["2", "3", "1", "0"],
+                answer: "2"
+            },
+            {
+                id: 30,
+                question: "Ауыстыру санын шектейтін replace() әдісі орындалғанда экранға не шығады?",
+                code: "s = 'ab-ab-ab'\nprint(s.replace('ab', 'X', 2))",
+                options: ["X-X-ab", "X-X-X", "X-ab-ab", "ab-X-X"],
+                answer: "X-X-ab"
+            },
+            {
+                id: 31,
+                question: "Symbol Unicode (ASCII) кодын анықтайтын ord() функциясы орындалғанда мына өрнектің нәтижесі неге тең болады?",
+                code: "print(ord('B') - ord('A'))",
+                options: ["1", "66", "65", "0"],
+                answer: "1"
+            },
+            {
+                id: 32,
+                question: "Кодты таңбаға айналдыратын chr() функциясының мына өрнегі орындалғанда қандай символ қайтарылады?",
+                code: "print(chr(ord('a') + 3))",
+                options: ["d", "c", "b", "e"],
+                answer: "d"
+            },
+            {
+                id: 33,
+                question: "Жолдың тек цифрлардан тұратынын тексеретін isdigit() әдісінің мына екі өрнегі үшін нәтижелері қандай болады?",
+                code: "s1 = '123a'\ns2 = '123'\nprint(s1.isdigit(), s2.isdigit())",
+                options: ["False True", "True False", "True True", "False False"],
+                answer: "False True"
+            },
+            {
+                id: 34,
+                question: "Жолдық әдістердің тізбекті шақырылуы орындалғанда экранға қандай мәтін басылып шығады?",
+                code: "s = '  hello world  '\nprint(s.strip().title())",
+                options: ["Hello World", "hello world", "Hello world", "HELLO WORLD"],
+                answer: "Hello World"
+            },
+            {
+                id: 35,
+                question: "Айнымалылардың мәндерін қатар меншіктеу арқылы алмастыру орындалған соң a мен b мәндері қандай болады?",
+                code: "a, b = 5, 10\na, b = b, a + b\nprint(a, b)",
+                options: ["10 15", "5 10", "10 5", "15 10"],
+                answer: "10 15"
+            },
+            {
+                id: 36,
+                question: "y = 3x^2 + 5x - 7 многочленін x = 2 мәнінде есептейтін төмендегі кодтың нәтижесі неге тең?",
+                code: "x = 2\ny = 3 * x**2 + 5 * x - 7\nprint(y)",
+                options: ["15", "17", "11", "21"],
+                answer: "15"
+            },
+            {
+                id: 37,
+                question: "Үшбұрыштың қабырғалар теңсіздігін (a+b>c және a+c>b және b+c>a) тексеретін мына кодтың орындалу нәтижесі қандай болады?",
+                code: "a, b, c = 3, 4, 8\nvalid = (a + b > c) and (a + c > b) and (b + c > a)\nprint(valid)",
+                options: ["False", "True", "None", "Error"],
+                answer: "False"
+            },
+            {
+                id: 38,
+                question: "1-ден 6-ға дейінгі жұп сандардың көбейтіндісін табатын мына for циклі орындалған соң p айнымалысы неге тең болады?",
+                code: "p = 1\nfor i in range(2, 7, 2):\n    p *= i\nprint(p)",
+                options: ["48", "24", "16", "120"],
+                answer: "48"
+            },
+            {
+                id: 39,
+                question: "Код шексіз циклге (infinite loop) айналмауы үшін бос орны қай нұсқамен толықтырылуы қажет?",
+                code: "x = 10\nwhile x > 0:\n    print(x)\n    ____",
+                options: ["x -= 1", "x += 1", "x = 10", "pass"],
+                answer: "x -= 1"
+            },
+            {
+                id: 40,
+                question: "find() әдісі ізделген ішкіжол табылып, оның бастапқы индексін қайтарғанда экранға қандай сан шығады?",
+                code: "s = 'Kazakhstan'\nprint(s.find('stan'))",
+                options: ["6", "5", "7", "0"],
+                answer: "6"
+            },
+            {
+                id: 41,
+                question: "find() әдісі ізделген ішкіжол сақталынған жол ішінен табылмағанда қандай мән қайтарады?",
+                code: "s = 'Python'\nprint(s.find('z'))",
+                options: ["-1", "0", "False", "ValueError"],
+                answer: "-1"
+            },
+            {
+                id: 42,
+                question: "Төменде берілген айнымалы атауларының қайсысы Python синтаксисіне толық сай келеді?",
+                code: null,
+                options: ["_user_name", "2user_name", "user-name", "class"],
+                answer: "_user_name"
+            },
+            {
+                id: 43,
+                question: "Python тіліндегі резервтегі кілттік сөздер тізімін бағдарламалық түрде көру үшін қай модуль қолданылады?",
+                code: null,
+                options: ["keyword", "sys", "os", "math"],
+                answer: "keyword"
+            },
+            {
+                id: 44,
+                question: "Белгілі бір шарт орындалғанша әрекеттер тізбегінің бірнеше рет қайталануын сипаттайтын алгоритм түрі қалай аталады?",
+                code: null,
+                options: ["Циклдік", "Сызықтық", "Тармақталған", "Рекурсивті"],
+                answer: "Циклдік"
+            },
+            {
+                id: 45,
+                question: "Алгоритм белгілі бір шекті қадамдар санынан кейін міндетті түрде тоқтауын талап ететін қасиеті қалай аталады?",
+                code: null,
+                options: ["Аняқталушылық (шектілік)", "Дискреттілік", "Анықтылық", "Жалпылық"],
+                answer: "Аняқталушылық (шектілік)"
+            },
+            {
+                id: 46,
+                question: "Төменде берілген ішкі орналасқан шартты оператор орындалғанда экранға не басып шығарылады?",
+                code: "x = 10\nif x > 5:\n    if x < 8:\n        print('A')\n    else:\n        print('B')\nelse:\n    print('C')",
+                options: ["B", "A", "C", "Нәтижесіз"],
+                answer: "B"
+            },
+            {
+                id: 47,
+                question: "Тізбектің элементтер санын анықтайтын len(range(5, 15, 3)) өрнегінің нәтижесі нешеге тең болады?",
+                code: null,
+                options: ["4", "5", "3", "10"],
+                answer: "4"
+            },
+            {
+                id: 48,
+                question: "f-string форматын қолданатын мына код орындалғанда экранға қандай нәтиже шығады?",
+                code: "a, b = 5, 3\nprint(f'{a} + {b} = {a+b}')",
+                options: ["5 + 3 = 8", "a + b = 8", "f'5 + 3 = 8'", "5 + 3 = a+b"],
+                answer: "5 + 3 = 8"
+            },
+            {
+                id: 49,
+                question: "Типтерді түрлендіру операторлары орындалғанда мына өрнектің нәтижесі қандай болады?",
+                code: "res = int(5.7) + float('3.2')\nprint(res)",
+                options: ["8.2", "8.9", "8", "8.7"],
+                answer: "8.2"
+            },
+            {
+                id: 50,
+                question: "Мәтіндегі дауысты әріптерді санайтын генераторлық өрнегі бар мына кодтың нәтижесі неге тең?",
+                code: "s = 'abracadabra'\nvowels = 'aeiou'\ncount = sum(1 for ch in s if ch in vowels)\nprint(count)",
+                options: ["5", "11", "6", "4"],
+                answer: "5"
+            }
+        ];
+
+        let testQuestions = [];
+        let userAnswers = {};
+        let flaggedQuestions = new Set();
+        let currentQuestionIndex = 0;
+        let studentInfo = { name: '', group: '' };
+        let testMode = 'exam';
+        
+        let timerInterval = null;
+        let totalSeconds = 0;
+        let elapsedSeconds = 0;
+
+        function normalizeStr(str) {
+            if (str === null || str === undefined) return '';
+            return String(str).replace(/[\u00A0\s]+/g, ' ').trim();
+        }
+
+        /* -------------------------------------------------------------
+         * ONE-TIME ATTEMPT CHECK ON PAGE LOAD
+         * ------------------------------------------------------------- */
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedResult = localStorage.getItem('python_test_submitted_data');
+            if (savedResult) {
+                const data = JSON.parse(savedResult);
+                showSavedResults(data);
+            }
+        });
+
+        function showSavedResults(data) {
+            document.getElementById('resStudentName').textContent = data.name;
+            document.getElementById('resStudentGroup').textContent = data.group;
+            document.getElementById('resDateTime').textContent = data.dateTime;
+            document.getElementById('resTimeSpent').textContent = data.timeSpent;
+            document.getElementById('resTotalPoints').textContent = data.totalScore;
+            document.getElementById('resPercentage').textContent = `${data.percentage}%`;
+            document.getElementById('resCorrectCount').textContent = data.correctCount;
+            document.getElementById('resIncorrectCount').textContent = data.incorrectCount;
+
+            const badge = document.getElementById('gradeBadge');
+            if (data.totalScore >= 90) {
+                badge.textContent = "Өте жақсы (5)";
+                badge.className = "px-3.5 py-1 rounded-full text-xs font-black bg-emerald-500 text-white shadow-md shadow-emerald-500/30";
+            } else if (data.totalScore >= 75) {
+                badge.textContent = "Жақсы (4)";
+                badge.className = "px-3.5 py-1 rounded-full text-xs font-black bg-brand-500 text-white shadow-md shadow-brand-500/30";
+            } else if (data.totalScore >= 50) {
+                badge.textContent = "Қанағаттанарлық (3)";
+                badge.className = "px-3.5 py-1 rounded-full text-xs font-black bg-amber-500 text-white shadow-md shadow-amber-500/30";
+            } else {
+                badge.textContent = "Қанағаттанарлықсыз (2)";
+                badge.className = "px-3.5 py-1 rounded-full text-xs font-black bg-rose-500 text-white shadow-md shadow-rose-500/30";
+            }
+
+            document.getElementById('screenWelcome').classList.add('hidden');
+            document.getElementById('screenTest').classList.add('hidden');
+            document.getElementById('screenResult').classList.remove('hidden');
+
+            showToast("Сіз бұл тестті бұрын тапсырғансыз!", "fa-lock", "text-amber-400");
+        }
+
+        /* -------------------------------------------------------------
+         * THEME HANDLER
+         * ------------------------------------------------------------- */
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        /* -------------------------------------------------------------
+         * START TEST HANDLER
+         * ------------------------------------------------------------- */
+        function handleStartTest(e) {
+            e.preventDefault();
+
+            if (localStorage.getItem('python_test_submitted_data')) {
+                alert("Сіз бұл тестті бұрын тапсырғансыз! Қайта тапсыруға рұқсат жоқ.");
+                return;
+            }
+
+            const nameInput = document.getElementById('studentName').value.trim();
+            const groupInput = document.getElementById('studentGroup').value.trim();
+            const timerVal = 50; // Fixed 50 minutes
+            const shuffleFlag = document.getElementById('shuffleAnswers').checked;
+            
+            const modeRadios = document.getElementsByName('testMode');
+            for (let r of modeRadios) {
+                if (r.checked) testMode = r.value;
+            }
+
+            if (!nameInput || !groupInput) {
+                showToast("Аты-жөніңіз бен тобыңызды толтырыңыз!", "fa-circle-exclamation", "text-amber-400");
+                return;
+            }
+
+            studentInfo.name = nameInput;
+            studentInfo.group = groupInput;
+
+            testQuestions = JSON.parse(JSON.stringify(rawQuestionsData));
+
+            if (shuffleFlag) {
+                testQuestions.forEach(q => {
+                    q.options = shuffleArray([...q.options]);
+                });
+            }
+
+            userAnswers = {};
+            flaggedQuestions.clear();
+            currentQuestionIndex = 0;
+            elapsedSeconds = 0;
+
+            document.getElementById('displayUserName').textContent = studentInfo.name;
+            document.getElementById('displayUserGroup').textContent = `Топ: ${studentInfo.group}`;
+            
+            const nameParts = studentInfo.name.split(' ');
+            let initials = nameParts[0].charAt(0).toUpperCase();
+            if (nameParts.length > 1) initials += nameParts[1].charAt(0).toUpperCase();
+            document.getElementById('displayUserInitials').textContent = initials;
+
+            totalSeconds = timerVal * 60;
+            document.getElementById('timerContainer').classList.remove('hidden');
+            startTimer();
+
+            document.getElementById('screenWelcome').classList.add('hidden');
+            document.getElementById('screenTest').classList.remove('hidden');
+
+            renderCurrentQuestion();
+            renderQuestionGrids();
+            showToast("Тест басталды! Сәттілік!", "fa-circle-check", "text-emerald-400");
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        /* -------------------------------------------------------------
+         * TIMER CONTROLLER
+         * ------------------------------------------------------------- */
+        function startTimer() {
+            clearInterval(timerInterval);
+            updateTimerDisplay();
+
+            timerInterval = setInterval(() => {
+                elapsedSeconds++;
+                if (totalSeconds > 0) {
+                    const remaining = totalSeconds - elapsedSeconds;
+                    if (remaining <= 0) {
+                        clearInterval(timerInterval);
+                        showToast("Уақыт аяқталды! Тест авто-жіберіледі.", "fa-clock", "text-rose-400");
+                        finalizeTest();
+                        return;
+                    }
+                }
+                updateTimerDisplay();
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            if (totalSeconds === 0) return;
+            const remaining = Math.max(0, totalSeconds - elapsedSeconds);
+            const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+            const s = (remaining % 60).toString().padStart(2, '0');
+            document.getElementById('timerDisplay').textContent = `${m}:${s}`;
+        }
+
+        /* -------------------------------------------------------------
+         * NAVIGATION & QUESTION RENDERING
+         * ------------------------------------------------------------- */
+        function renderCurrentQuestion() {
+            const q = testQuestions[currentQuestionIndex];
+            
+            document.getElementById('currentQuestionNum').textContent = currentQuestionIndex + 1;
+            document.getElementById('qIndexBadge').textContent = currentQuestionIndex + 1;
+            document.getElementById('questionText').textContent = `${q.id}. ${q.question}`;
+
+            const codeBoxContainer = document.getElementById('codeBlockContainer');
+            const codeBlock = document.getElementById('codeBlock');
+            if (q.code) {
+                codeBoxContainer.classList.remove('hidden');
+                codeBlock.innerHTML = formatPythonSyntax(q.code);
+            } else {
+                codeBoxContainer.classList.add('hidden');
+            }
+
+            updateFlagUI();
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            const optionLetters = ['A', 'B', 'C', 'D'];
+            const userPick = userAnswers[q.id];
+            const isAnswered = userPick !== undefined;
+
+            q.options.forEach((optText, idx) => {
+                const isCorrectOption = normalizeStr(optText) === normalizeStr(q.answer);
+                const isUserSelected = isAnswered && normalizeStr(userPick) === normalizeStr(optText);
+
+                let optBtnClass = "border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-700/30 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700";
+                let badgeClass = "bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300";
+                let statusBadgeHtml = "";
+
+                if (testMode === 'practice' && isAnswered) {
+                    if (isCorrectOption) {
+                        optBtnClass = "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-100 font-bold ring-2 ring-emerald-500/30";
+                        badgeClass = "bg-emerald-600 text-white";
+                        statusBadgeHtml = `<span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center space-x-1"><i class="fa-solid fa-circle-check"></i><span>Дұрыс жауап</span></span>`;
+                    } else if (isUserSelected && !isCorrectOption) {
+                        optBtnClass = "border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-100 font-bold ring-2 ring-rose-500/30";
+                        badgeClass = "bg-rose-600 text-white";
+                        statusBadgeHtml = `<span class="text-xs font-bold text-rose-600 dark:text-rose-400 flex items-center space-x-1"><i class="fa-solid fa-circle-xmark"></i><span>Сіздің қатеңіз</span></span>`;
+                    }
+                } else if (isUserSelected) {
+                    optBtnClass = "border-brand-500 bg-brand-50/60 dark:bg-brand-900/30 text-slate-900 dark:text-white shadow-sm ring-2 ring-brand-500/20";
+                    badgeClass = "bg-brand-600 text-white";
+                    statusBadgeHtml = `<div class="w-5 h-5 rounded-full bg-brand-600 text-white flex items-center justify-center"><i class="fa-solid fa-check text-[10px]"></i></div>`;
+                }
+
+                const optBtn = document.createElement('button');
+                optBtn.type = 'button';
+                optBtn.onclick = () => selectOption(q.id, optText);
+                optBtn.className = `w-full p-4 rounded-2xl border text-left transition-all duration-150 flex items-center justify-between group ${optBtnClass}`;
+
+                optBtn.innerHTML = `
+                    <div class="flex items-center space-x-3.5">
+                        <span class="w-8 h-8 rounded-xl flex items-center justify-center font-bold text-xs ${badgeClass}">
+                            ${optionLetters[idx]}
+                        </span>
+                        <span class="text-sm font-medium leading-snug">${escapeHtml(optText)}</span>
+                    </div>
+                    ${statusBadgeHtml}
+                `;
+                optionsContainer.appendChild(optBtn);
+            });
+
+            const answeredCount = Object.keys(userAnswers).length;
+            const progressPct = (answeredCount / testQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = `${progressPct}%`;
+            document.getElementById('answeredRatioBadge').textContent = `${answeredCount}/50 орындалды`;
+
+            document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
+
+            const isLast = currentQuestionIndex === testQuestions.length - 1;
+            if (isLast) {
+                document.getElementById('nextBtn').classList.add('hidden');
+                document.getElementById('submitTestBtn').classList.remove('hidden');
+            } else {
+                document.getElementById('nextBtn').classList.remove('hidden');
+                document.getElementById('submitTestBtn').classList.add('hidden');
+            }
+
+            renderQuestionGrids();
+        }
+
+        /* -------------------------------------------------------------
+         * INTERACTIVE ACTION HANDLERS
+         * ------------------------------------------------------------- */
+        function selectOption(questionId, optionValue) {
+            userAnswers[questionId] = optionValue;
+            renderCurrentQuestion();
+        }
+
+        function navigateQuestion(dir) {
+            const newIdx = currentQuestionIndex + dir;
+            if (newIdx >= 0 && newIdx < testQuestions.length) {
+                currentQuestionIndex = newIdx;
+                renderCurrentQuestion();
+            }
+        }
+
+        function goToQuestion(idx) {
+            if (idx >= 0 && idx < testQuestions.length) {
+                currentQuestionIndex = idx;
+                renderCurrentQuestion();
+                document.getElementById('gridModal').classList.add('hidden');
+            }
+        }
+
+        function toggleFlagCurrentQuestion() {
+            const q = testQuestions[currentQuestionIndex];
+            if (flaggedQuestions.has(q.id)) {
+                flaggedQuestions.delete(q.id);
+                showToast("Белгілеу алынып тасталды", "fa-bookmark", "text-slate-400");
+            } else {
+                flaggedQuestions.add(q.id);
+                showToast("Сұрақ қайта қарау үшін белгіленді", "fa-bookmark", "text-amber-400");
+            }
+            updateFlagUI();
+            renderQuestionGrids();
+        }
+
+        function updateFlagUI() {
+            const q = testQuestions[currentQuestionIndex];
+            const flagBtn = document.getElementById('flagBtn');
+            const flagIcon = document.getElementById('flagIcon');
+            const flagText = document.getElementById('flagText');
+
+            if (flaggedQuestions.has(q.id)) {
+                flagBtn.className = "px-3 py-1.5 rounded-xl border border-amber-400 bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 text-xs font-medium transition flex items-center space-x-1.5";
+                flagIcon.className = "fa-solid fa-bookmark text-amber-500";
+                flagText.textContent = "Белгіленген";
+            } else {
+                flagBtn.className = "px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-500 hover:text-amber-500 hover:border-amber-400 text-xs font-medium transition flex items-center space-x-1.5";
+                flagIcon.className = "fa-regular fa-bookmark";
+                flagText.textContent = "Белгілеу";
+            }
+        }
+
+        function renderQuestionGrids() {
+            const desktopGrid = document.getElementById('desktopQuestionGrid');
+            const mobileGrid = document.getElementById('mobileQuestionGrid');
+
+            if (!desktopGrid || !mobileGrid) return;
+
+            let desktopHtml = '';
+            let mobileHtml = '';
+
+            testQuestions.forEach((q, idx) => {
+                const isCurrent = idx === currentQuestionIndex;
+                const isAnswered = userAnswers[q.id] !== undefined;
+                const isFlagged = flaggedQuestions.has(q.id);
+
+                let btnBg = "bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600";
+                if (isAnswered) {
+                    btnBg = "bg-emerald-500 text-white font-bold hover:bg-emerald-600";
+                }
+                if (isFlagged && !isAnswered) {
+                    btnBg = "bg-amber-400 text-amber-950 font-bold hover:bg-amber-500";
+                }
+
+                let ringClass = isCurrent ? "ring-2 ring-offset-2 ring-brand-500 font-extrabold scale-105 z-10" : "";
+
+                const btnMarkup = `
+                    <button onclick="goToQuestion(${idx})" class="h-9 rounded-xl text-xs flex items-center justify-center transition-all ${btnBg} ${ringClass}">
+                        ${idx + 1}
+                    </button>
+                `;
+
+                desktopHtml += btnMarkup;
+                mobileHtml += btnMarkup;
+            });
+
+            desktopGrid.innerHTML = desktopHtml;
+            mobileGrid.innerHTML = mobileHtml;
+        }
+
+        function toggleGridModal() {
+            const modal = document.getElementById('gridModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function showSubmitModal() {
+            const unansweredCount = testQuestions.length - Object.keys(userAnswers).length;
+            const warningText = document.getElementById('unansweredWarningText');
+
+            if (unansweredCount > 0) {
+                warningText.textContent = `Назар аударыңыз! Сізде ${unansweredCount} жауап берілмеген сұрақ бар.`;
+                warningText.className = "text-xs text-rose-500 dark:text-rose-400 font-semibold mt-1";
+            } else {
+                warningText.textContent = "Барлық сұрақтарға жауап берілді! Тестті аяқтауға дайынсыз.";
+                warningText.className = "text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-1";
+            }
+
+            document.getElementById('confirmModal').classList.remove('hidden');
+        }
+
+        function closeSubmitModal() {
+            document.getElementById('confirmModal').classList.add('hidden');
+        }
+
+        /* -------------------------------------------------------------
+         * SYNTAX HIGHLIGHTING & ESCAPING UTILITIES
+         * ------------------------------------------------------------- */
+        function formatPythonSyntax(code) {
+            let escaped = escapeHtml(code);
+            escaped = escaped.replace(/(('(.*?)')|(&quot;(.*?)&quot;))/g, '<span class="py-str">$1</span>');
+            
+            const keywords = ['import', 'from', 'for', 'in', 'while', 'if', 'else', 'elif', 'break', 'continue', 'return', 'and', 'or', 'not', 'True', 'False', 'None'];
+            keywords.forEach(kw => {
+                const reg = new RegExp(`\\b${kw}\\b`, 'g');
+                escaped = escaped.replace(reg, `<span class="py-kw">${kw}</span>`);
+            });
+
+            const fns = ['print', 'range', 'len', 'int', 'float', 'str', 'sum', 'ord', 'chr', 'math', 'sqrt', 'degrees', 'ceil', 'floor', 'count', 'replace', 'find', 'join', 'strip', 'title', 'isdigit'];
+            fns.forEach(fn => {
+                const reg = new RegExp(`\\b${fn}\\b`, 'g');
+                escaped = escaped.replace(reg, `<span class="py-fn">${fn}</span>`);
+            });
+
+            return escapeHtmlNumbers(escaped);
+        }
+
+        function escapeHtmlNumbers(str) {
+            return str.replace(/\b(\d+(\.\d+)?)\b/g, '<span class="py-num">$1</span>');
+        }
+
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
+
+        /* -------------------------------------------------------------
+         * TEST FINALIZE & SAVE SINGLE ATTEMPT
+         * ------------------------------------------------------------- */
+        function finalizeTest() {
+            clearInterval(timerInterval);
+            closeSubmitModal();
+
+            let correctCount = 0;
+            testQuestions.forEach(q => {
+                const userAns = userAnswers[q.id];
+                if (userAns !== undefined && normalizeStr(userAns) === normalizeStr(q.answer)) {
+                    correctCount++;
+                }
+            });
+
+            const totalScore = correctCount * 2;
+            const incorrectCount = testQuestions.length - correctCount;
+            const percentage = Math.round((correctCount / testQuestions.length) * 100);
+            const now = new Date();
+            const mins = Math.floor(elapsedSeconds / 60);
+            const secs = elapsedSeconds % 60;
+            const timeSpentStr = `${mins} мин ${secs} сек`;
+
+            const finalData = {
+                name: studentInfo.name,
+                group: studentInfo.group,
+                dateTime: now.toLocaleString('kk-KZ'),
+                timeSpent: timeSpentStr,
+                totalScore: totalScore,
+                percentage: percentage,
+                correctCount: correctCount,
+                incorrectCount: incorrectCount
+            };
+
+            // Save attempt to localStorage
+            localStorage.setItem('python_test_submitted_data', JSON.stringify(finalData));
+
+            showSavedResults(finalData);
+            showToast("Тест нәтижесі толық есептелді!", "fa-circle-check", "text-emerald-400");
+        }
+
+        /* -------------------------------------------------------------
+         * EXPORT & UTILITIES
+         * ------------------------------------------------------------- */
+        function copyResultsSummary() {
+            const name = document.getElementById('resStudentName').textContent;
+            const group = document.getElementById('resStudentGroup').textContent;
+            const score = document.getElementById('resTotalPoints').textContent;
+            const correct = document.getElementById('resCorrectCount').textContent;
+
+            const text = `[Python Тест Нәтижесі]\nСтудент: ${name}\nТоп: ${group}\nЖиналған балл: ${score} / 100\nДұрыс жауаптар: ${correct} / 50`;
+
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            showToast("Нәтиже алмасу буферіне көшірілді!", "fa-copy", "text-brand-400");
+        }
+
+        function showToast(msg, iconClass = "fa-circle-info", iconColor = "text-brand-400") {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMsg.textContent = msg;
+            toastIcon.className = `fa-solid ${iconClass} ${iconColor}`;
+
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
